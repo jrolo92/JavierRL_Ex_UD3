@@ -241,7 +241,7 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modelonuevoresultados);
     }
     
-
+   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
