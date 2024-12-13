@@ -11,7 +11,9 @@ import javax.swing.WindowConstants;
 
 public class Apuesta extends javax.swing.JFrame {
 
-   
+   /**
+    * Crea una quiniela para realizar apuestas en partidos.
+    */
     public Apuesta() 
     {
         initComponents();
@@ -120,7 +122,11 @@ public class Apuesta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Método para añadir el boton de nuevo partido.
+     * @param evt será el evento a añadir.
+     */
     private void bNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNuevoActionPerformed
         CrearPartido agregarpartido = new CrearPartido(this);
         agregarpartido.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -130,22 +136,39 @@ public class Apuesta extends javax.swing.JFrame {
         agregarpartido.setVisible(Boolean.TRUE);
     }//GEN-LAST:event_bNuevoActionPerformed
 
+    /**
+     * Metodo para añadir botón de eliminar un partido.
+     * @param evt será el evento a eliminar
+     */
     private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
         borraPartido(listaQuiniela.getSelectedIndex());
     }//GEN-LAST:event_bEliminarActionPerformed
 
+    /**
+     * Metodo para añadir botón de resetear la quiniela.
+     * @param evt será el evento a resetear.
+     */
     private void bResetearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bResetearActionPerformed
         DefaultListModel modelovacio = new DefaultListModel();
         this.listaQuiniela.setModel(modelovacio);
         this.listaResultados.setModel(modelovacio);
     }//GEN-LAST:event_bResetearActionPerformed
 
-   
+   /**
+    * Método para elegir un número aleatorio truncado de entre dos números.
+    * @param n1 será el primer número entero.
+    * @param n2 será el segundo número entero.
+    * @return un número entero aleatorio.
+    */
     public int cualquiera(int n1, int n2)
     {
         return (int)Math.floor((Math.random()*(n2-n1+1) + n1));
     }
     
+    /**
+     * Método para realizar la apuesta.
+     * @param evt será el evento a realizar.
+     */
     private void bRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRealizarActionPerformed
         DefaultListModel modeloquinielaresuelta = new DefaultListModel();
 
@@ -172,7 +195,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modeloquinielaresuelta);
     }//GEN-LAST:event_bRealizarActionPerformed
 
-    
+    /**
+     * Método para añadir un partido nuevo a la quiniela.
+     * @param partido será el partido a añadir.
+     */
     public void partidoNuevo (String partido)
     {
         DefaultListModel modelonuevo = new DefaultListModel();
@@ -186,7 +212,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaQuiniela.setModel(modelonuevo);
     }
     
-  
+    /**
+     * Método para eliminar un partido de la quiniela.
+     * @param indice será la posición del partido a eliminar.
+     */
     public void borraPartido (int indice)
     {
         DefaultListModel modelonuevoquiniela = new DefaultListModel();
@@ -212,7 +241,7 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modelonuevoresultados);
     }
     
-   
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
