@@ -2,20 +2,16 @@
 import java.awt.event.KeyEvent;
 
 
-
 public class CrearPartido extends javax.swing.JFrame
 {
    
-    
     private Apuesta v;
     
-   
     public CrearPartido() 
     {
         initComponents();
     }
 
-   
     public CrearPartido(Apuesta ventana) 
     {
         initComponents();
@@ -69,7 +65,11 @@ public class CrearPartido extends javax.swing.JFrame
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Método para añadir partido.
+     * @param p es el partido a añadir.
+     */
     public void añadePartido (String p)
     {
         v.partidoNuevo(p);
@@ -77,6 +77,10 @@ public class CrearPartido extends javax.swing.JFrame
         tPartido.requestFocus();
     }
     
+    /**
+     * Método para añadir el boton de nuevo partido.
+     * @param evt es el evento de añadir.
+     */
     private void bAgregarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarPartidoActionPerformed
         añadePartido(tPartido.getText());
     }//GEN-LAST:event_bAgregarPartidoActionPerformed
@@ -88,7 +92,6 @@ public class CrearPartido extends javax.swing.JFrame
         }
     }//GEN-LAST:event_tPartidoKeyPressed
 
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
